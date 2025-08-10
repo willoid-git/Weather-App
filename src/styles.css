@@ -43,7 +43,7 @@ input[type="search"] {
 .search-button {
   margin-left: 5px;
   font-size: 16px;
-  background-color: #5d9df1;
+  background-color: #6f6f6f;
   color: white;
   border: none;
   padding: 20px;
@@ -97,6 +97,18 @@ main {
   font-size: 28px;
   position: relative;
   top: -38px;
+}
+
+.current-precipitation {
+  font-weight: bold;
+}
+
+.current-humidity {
+  font-weight: bold;
+}
+
+.current-windspeed {
+  font-weight: bold;
 }
 
 footer {
