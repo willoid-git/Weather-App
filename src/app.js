@@ -1,14 +1,6 @@
-//city search, weather api, and display
-function displayTemperature(response) {
-  console.log(response.data);
-  let temperatureElement = document.querySelector("#currentTemp");
-  let temperature = Math.round(response.data.temperature.current);
-  let cityElement = document.querySelector("#current-city");
-  cityElement.innerHTML = response.data.city;
-  temperatureElement.innerHTML = temperature;
-}
+//city search
 
-function search(event) {
+function citySearch(event) {
   event.preventDefault();
   let searchInputElement = document.querySelector("#search-input");
 
@@ -20,7 +12,17 @@ function search(event) {
 }
 
 let citySearchForm = document.querySelector("#city-search");
-citySearchForm.addEventListener("submit", search);
+citySearchForm.addEventListener("submit", citySearch);
+
+//temp display
+function displayTemperature(response) {
+  console.log(response.data);
+  let temperatureElement = document.querySelector("#currentTemp");
+  let temperature = Math.round(response.data.temperature.current);
+  let cityElement = document.querySelector("#current-city");
+  cityElement.innerHTML = response.data.city;
+  temperatureElement.innerHTML = temperature;
+}
 
 //date display
 
