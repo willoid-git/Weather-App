@@ -86,4 +86,6 @@ function handleSearchSubmit(event) {
 let citySearchForm = document.querySelector("#city-search-form");
 citySearchForm.addEventListener("submit", handleSearchSubmit);
 
-citySearch("Nelson");
+document.addEventListener("DOMContentLoaded", () => {
+  citySearch("Nelson");
+});
