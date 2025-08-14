@@ -16,7 +16,7 @@ function handleSearchSubmit(event) {
 let citySearchForm = document.querySelector("#city-search");
 citySearchForm.addEventListener("submit", handleSearchSubmit);
 
-citySearch("Paris");
+citySearch("Nelson");
 
 //temp display
 function displayTemperature(response) {
