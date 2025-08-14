@@ -5,6 +5,12 @@ body {
   margin-top: 8px;
 }
 
+.logo {
+  width: 25%;
+  padding-top: 25px;
+  margin: 0 auto;
+}
+
 .weather-app {
   background: white;
   max-width: 600px;
@@ -80,6 +86,7 @@ main {
 .current-temperature {
   font-size: 48px;
   line-height: normal;
+  display: block;
 }
 
 .current-temperature-icon {
