@@ -6,60 +6,74 @@
     <title>Weather App</title>
     <link rel="stylesheet" href="src/styles.css" />
   </head>
+
   <body>
-  
-         <div class="weather-app">
-        <header>
-      <form id="city-search">
-        <input
-          type="search"
-          placeholder="Enter a city.."
-          required
-          class="search-input"
-          id="search-input"
-        />
-        <input type="submit" value="Search" class="search-button" />
-      </form>
-    </header>
+    <div class="weather-app">
+      <header>
+        <form id="city-search">
+          <input
+            type="search"
+            placeholder="Enter a city.."
+            required
+            class="search-input"
+            id="search-input"
+          />
+          <input type="submit" value="Search" class="search-button" />
+        </form>
+      </header>
 
-    <main>
-      <div class="current-weather">
-        <div>
-          <h1 id="current-city" class="current-city">Paris</h1>
-          <p class="current-details">
-            <span class="current-date" id="currentDate" >15:32</span>
-             , 
-            <span class="current-precipitation" id="currentPrecipitation">moderate rain</span>
-             <br />
-            Humidity: 
-            <strong><span class="current-humidity" id="currentHumidity">87%</span></strong>
-            , Wind: 
-            <strong><span class="current-windspeed" id="currentWindspeed">7.2km/h</span></strong>
-          </p>
+      <main>
+        <div class="current-weather">
+          <div>
+            <h1 id="current-city" class="current-city">Paris</h1>
+            <p class="current-details">
+              <span class="current-date" id="currentDate">15:32</span>
+              ,
+              <span class="current-precipitation" id="currentPrecipitation"
+                >moderate rain</span
+              >
+              <br />
+              Humidity:
+              <strong
+                ><span class="current-humidity" id="currentHumidity"
+                  >87%</span
+                ></strong
+              >
+              , Wind:
+              <strong
+                ><span class="current-windspeed" id="currentWindspeed"
+                  >7.2km/h</span
+                ></strong
+              >
+            </p>
+          </div>
+          <div class="current-temperature">
+            <span class="current-temperature-icon" id="currentTempIcon"
+              >☀️</span
+            >
+            <span class="current-temperature-value" id="currentTemp">14</span>
+            <span class="current-temperature-unit" id="currentTempUnit"
+              >°C</span
+            >
+          </div>
         </div>
-        <div class="current-temperature">
-          <span class="current-temperature-icon">☀️</span>
-          <span id="currentTemp" class="current-temperature-value">14</span>
-          <span class="current-temperature-unit">°C</span>
-        </div>
-      </div>
-    </main>
+      </main>
 
-    <footer>
-      <p>
-        This project was coded by
-        <a href="#" target="_blank">V & W</a> and is opened sourced
-        <a href="https://github.com/willoid-git/Weather-App" target="_blank">
-          on GitHub</a
-        >
-        and
-        <a href="https://www.netlify.com" target="_blank">hosted on Netlify</a>
-      </p>
-    </footer>
-      </div>
+      <footer>
+        <p>
+          This project was coded by
+          <a href="#" target="_blank">V & W</a> and is open sourced
+          <a href="https://github.com/willoid-git/Weather-App" target="_blank">
+            on GitHub</a
+          >
+          and
+          <a href="https://www.netlify.com" target="_blank"
+            >hosted on Netlify</a
+          >
+        </p>
+      </footer>
     </div>
     <script src="src/app.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </body>
-
 </html>

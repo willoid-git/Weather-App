@@ -33,7 +33,7 @@ form {
   font-size: 20px;
   padding: 20px;
   width: 75%;
-  border-radius: 6px;
+  border-radius: 5px;
 }
 
 input[type="search"] {
@@ -42,7 +42,7 @@ input[type="search"] {
 
 .search-button {
   margin-left: 5px;
-  font-size: 16px;
+  font-size: 20px;
   background-color: #6f6f6f;
   color: white;
   border: none;
