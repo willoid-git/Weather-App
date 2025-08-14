@@ -31,13 +31,11 @@ function formatDate(date) {
   let currentHour = date.getHours();
   let currentMinute = date.getMinutes();
 
-  if (currentMinute < 10) {
-    minutes = `0${minutes}`;
-  }
-
   if (currentHour < 10) {
     hours = `0${hours}`;
   }
+
+  //if (currentMinute < 10) {minutes = `0${minutes}`;}
 
   let days = [
     "Sunday",
