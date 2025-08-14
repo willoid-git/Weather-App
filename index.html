@@ -10,13 +10,13 @@
   <body>
     <div class="weather-app">
       <header>
-        <form id="city-search">
+        <form class="city-search-form" id="city-search-form">
           <input
             type="search"
             placeholder="Enter a city.."
             required
-            class="search-input"
-            id="search-input"
+            class="city-search-input"
+            id="city-search-input"
           />
           <input type="submit" value="Search" class="search-button" />
         </form>
@@ -25,33 +25,23 @@
       <main>
         <div class="current-weather">
           <div>
-            <h1 id="current-city" class="current-city">Paris</h1>
+            <h1 id="currentCity" class="current-city"></h1>
             <p class="current-details">
-              <span class="current-date" id="currentDate">15:32</span>
-              ,
-              <span class="current-precipitation" id="currentPrecipitation"
-                >moderate rain</span
-              >
+              <span class="current-date" id="currentDate"></span> -
+              <span
+                class="current-precipitation"
+                id="currentPrecipitation"
+              ></span>
               <br />
               Humidity:
-              <strong
-                ><span class="current-humidity" id="currentHumidity"
-                  >87%</span
-                ></strong
-              >
+              <strong><span id="currentHumidity"></span></strong>
               , Wind:
-              <strong
-                ><span class="current-windspeed" id="currentWindspeed"
-                  >7.2km/h</span
-                ></strong
-              >
+              <strong><span id="currentWindspeed"></span></strong>
             </p>
           </div>
           <div class="current-temperature">
-            <span class="current-temperature-icon" id="currentTempIcon"
-              >☀️</span
-            >
-            <span class="current-temperature-value" id="currentTemp">14</span>
+            <span class="current-temperature-icon" id="currentTempIcon"></span>
+            <span class="current-temperature-value" id="currentTemp"></span>
             <span class="current-temperature-unit" id="currentTempUnit"
               >°C</span
             >

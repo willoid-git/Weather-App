@@ -1,31 +1,25 @@
-//city search
-
-function citySearch(city) {
-  let apiKey = "b24fe20t8363f64078b0a0fc75130afo";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-
-  axios.get(apiUrl).then(displayTemperature);
-}
-
-function handleSearchSubmit(event) {
-  event.preventDefault();
-  let searchInputElement = document.querySelector("#search-input");
-  citySearch(searchInputElement.value);
-}
-
-let citySearchForm = document.querySelector("#city-search");
-citySearchForm.addEventListener("submit", handleSearchSubmit);
-
-citySearch("Nelson");
-
-//temp display
-function displayTemperature(response) {
-  console.log(response.data);
+//weather display
+function refreshWeather(response) {
   let temperatureElement = document.querySelector("#currentTemp");
-  let temperature = Math.round(response.data.temperature.current);
-  let cityElement = document.querySelector("#current-city");
+  let temperature = response.data.temperature.current;
+  let cityElement = document.querySelector("#currentCity");
+  let currentPrecipElement = document.querySelector("#currentPrecipitation");
+  let currentHumidityElement = document.querySelector("#currentHumidity");
+  let currentWindSpeedElement = document.querySelector("#currentWindSpeed");
+  let dateElement = document.querySelector("#currentDate");
+  let date = new Date(response.data.time * 1000);
+  let iconElement = document.querySelector("#currentTempIcon");
+
   cityElement.innerHTML = response.data.city;
-  temperatureElement.innerHTML = temperature;
+
+  dateElement.innerHTML = formatDate(date);
+
+  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="current-temperature-icon" />`;
+
+  temperatureElement.innerHTML = Math.round(temperature);
+  currentPrecipElement.innerHTML = response.data.condition.description;
+  currentHumidityElement.innerHTML = `${response.data.temperature.humidity}%`;
+  currentWindSpeedElement.innerHTML = `${response.data.wind.speed}km/h`;
 }
 
 //date display
@@ -72,7 +66,26 @@ function formatDate(date) {
   let formattedDay = days[currentDay];
   let formattedMonth = months[currentMonth];
 
-  let formattedDate = `${formattedDay}, ${formattedMonth} ${currentDate}, ${currentHour}:${currentMinute}`;
+  let formattedDate = `${currentHour}:${currentMinute} ${formattedDay}, ${formattedMonth} ${currentDate}`;
 
   return `${formattedDate}`;
 }
+
+//city search
+
+function citySearch(city) {
+  let apiKey = "b24fe20t8363f64078b0a0fc75130afo";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(refreshWeather);
+}
+
+function handleSearchSubmit(event) {
+  event.preventDefault();
+  let searchInput = document.querySelector("#city-search-input");
+  citySearch(searchInput.value);
+}
+
+let citySearchForm = document.querySelector("#city-search-form");
+citySearchForm.addEventListener("submit", handleSearchSubmit);
+
+citySearch("Nelson");
